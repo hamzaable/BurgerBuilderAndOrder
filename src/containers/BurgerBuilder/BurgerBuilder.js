@@ -4,8 +4,6 @@ import BuildControls from "../../components/Burger/BuildControls/BuildControls";
 import Modal from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
 
-import Aux from "../../hoc/Auxx/Aux";
-
 import axios from "../../axios-orders";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
@@ -121,7 +119,7 @@ class BurgerBuilder extends Component {
     );
     if (this.state.ingredients) {
       burger = (
-        <Aux>
+        <div>
           <Burger ingredients={this.state.ingredients} />
           <BuildControls
             ingredientAdded={this.addIngredientHandler}
@@ -131,7 +129,7 @@ class BurgerBuilder extends Component {
             ordered={this.purchaseHandler}
             price={this.state.totalPrice}
           />
-        </Aux>
+        </div>
       );
       orderSummary = (
         <OrderSummary
@@ -147,7 +145,7 @@ class BurgerBuilder extends Component {
     }
 
     return (
-      <Aux>
+      <div>
         <Modal
           show={this.state.purchasing}
           modalClosed={this.purchaseCancelHandler}
@@ -155,7 +153,7 @@ class BurgerBuilder extends Component {
           {orderSummary}
         </Modal>
         {burger}
-      </Aux>
+      </div>
     );
   }
 }
