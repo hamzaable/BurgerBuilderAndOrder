@@ -2,7 +2,7 @@
   "name": "myapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": " https://hamidraza1.github.io/BurgerBuilder/",
+  "homepage": " https://hamzaable.github.io/BurgerMakeandBuy/",
   "dependencies": {
     "@babel/core": "7.9.0",
     "@svgr/webpack": "4.3.3",
